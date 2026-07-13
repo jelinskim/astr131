@@ -126,13 +126,13 @@ body {
 .brand-name {
   font-family: var(--ff-display);
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02em;
 }
 
 .brand-sub {
   font-family: var(--ff-mono);
-  font-size: 0.58rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   color: var(--ink-faint);
@@ -1346,7 +1346,7 @@ table.data tr.trouble td {
 }
 
 .modal {
-  width: min(760px, 100%);
+  width: min(1200px, 100%);
   max-height: 92vh;
   overflow: auto;
   overscroll-behavior: contain;
@@ -1410,7 +1410,7 @@ table.data tr.trouble td {
 
 @media (min-width: 760px) {
   .modal.wide {
-    width: min(980px, 100%);
+    width: min(1200px, 100%);
   }
 
   .detail-grid {
@@ -1991,36 +1991,96 @@ select option {
   color: var(--verdigris-d);
   font-weight: 600;
 }
+
 /* ===== additions: mobile badges off, stats sort arrow + mobile sort, guide ===== */
 
 /* hide the "Stars only / With lines" badge on mobile (quiz + atlas) */
-@media (max-width: 759px) { .chart-badge { display: none !important; } }
+@media (max-width: 759px) {
+  .chart-badge {
+    display: none !important;
+  }
+}
 
 /* active-sort arrow on stats headers */
-.sarrow { font-size: 0.82em; color: var(--verdigris); margin-left: 4px; }
-table.data th.active { color: var(--ink); }
+.sarrow {
+  font-size: 0.82em;
+  color: var(--verdigris);
+  margin-left: 4px;
+}
+
+table.data th.active {
+  color: var(--ink);
+}
 
 /* mobile "Sort by" menu for stats (desktop uses clickable headers) */
-.field.stats-sort { display: none; }
-@media (max-width: 600px) { .field.stats-sort { display: block; } }
+.field.stats-sort {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .field.stats-sort {
+    display: block;
+  }
+}
 
 /* Quick Start guide */
-.guide { display: flex; flex-direction: column; gap: 16px; }
-.guide-sec h3 { font-size: 1.5rem; margin: 0 0 10px; }
-.guide-sec p { margin: 0 0 10px; line-height: 1.6; }
-.guide-sec ul { margin: 6px 0 0; padding-left: 20px; }
-.guide-sec li { margin-bottom: 8px; line-height: 1.55; }
+.guide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.guide-sec h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+
+.guide-sec p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.guide-sec ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+.guide-sec li {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
 .guide-sec .guide-lbl {
-  font-family: var(--ff-mono); font-size: 0.64rem; text-transform: uppercase;
-  letter-spacing: 0.14em; color: var(--brass); margin: 16px 0 6px;
+  font-family: var(--ff-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brass);
+  margin: 16px 0 6px;
 }
 
 /* ===================== theme toggle, resume card, end quiz ===================== */
-.topbar-right { display: flex; align-items: center; gap: 10px; }
-.theme-toggle { flex: none; }
-.answer-row .end-quiz { flex: none; }
-.resume-card { border-color: var(--brass); }
-.resume-card .row-gap { flex-wrap: wrap; }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  flex: none;
+}
+
+.answer-row .end-quiz {
+  flex: none;
+}
+
+.resume-card {
+  border-color: var(--brass);
+}
+
+.resume-card .row-gap {
+  flex-wrap: wrap;
+}
 
 /* ============================== DARK MODE ============================== */
 html[data-theme="dark"] {
@@ -2054,17 +2114,25 @@ html[data-theme="dark"] {
   --shadow-sm: 0 6px 16px -12px rgba(0, 0, 0, 0.68);
   --ring: 0 0 0 3px rgba(59, 174, 146, 0.42);
 }
+
 /* surfaces that hardcode the light paper tone */
 html[data-theme="dark"] .topbar {
   background: linear-gradient(to bottom, rgba(16, 20, 27, 0.96), rgba(16, 20, 27, 0.82));
   border-bottom-color: var(--line-2);
 }
+
 html[data-theme="dark"] .graticule {
   background-image:
     repeating-linear-gradient(0deg, transparent 0 63px, rgba(180, 192, 214, 0.05) 63px 64px),
     repeating-linear-gradient(90deg, transparent 0 63px, rgba(180, 192, 214, 0.05) 63px 64px);
 }
-html[data-theme="dark"] .modal-nav { background: rgba(25, 31, 41, 0.95); color: var(--ink); border-color: var(--line-2); }
+
+html[data-theme="dark"] .modal-nav {
+  background: rgba(25, 31, 41, 0.95);
+  color: var(--ink);
+  border-color: var(--line-2);
+}
+
 /* keep foregrounds light on filled accent surfaces */
 html[data-theme="dark"] .btn.primary,
 html[data-theme="dark"] .btn.primary:hover,
@@ -2072,34 +2140,116 @@ html[data-theme="dark"] .nav a.active,
 html[data-theme="dark"] .toast,
 html[data-theme="dark"] .picker-item.sel,
 html[data-theme="dark"] .verdict.correct .vicon,
-html[data-theme="dark"] .verdict.wrong .vicon { color: #eef1f6; }
-html[data-theme="dark"] .switch input:checked + .track::after { background: #eef1f6; }
+html[data-theme="dark"] .verdict.wrong .vicon {
+  color: #eef1f6;
+}
+
+html[data-theme="dark"] .switch input:checked+.track::after {
+  background: #eef1f6;
+}
 
 /* ===================== favorites + progress chart ===================== */
 .card-fav {
-  position: absolute; top: 8px; left: 8px; z-index: 2;
-  width: 32px; height: 32px; display: grid; place-items: center; cursor: pointer;
-  border-radius: 8px; border: 1px solid rgba(233, 226, 207, 0.28);
-  background: rgba(7, 9, 18, 0.5); color: rgba(233, 226, 207, 0.85);
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid rgba(233, 226, 207, 0.28);
+  background: rgba(7, 9, 18, 0.5);
+  color: rgba(233, 226, 207, 0.85);
   transition: color .15s, background .15s, border-color .15s;
 }
-.card-fav:hover { background: rgba(7, 9, 18, 0.85); border-color: rgba(233, 226, 207, 0.6); }
-.card-fav.on { color: var(--brass); border-color: var(--brass); background: rgba(7, 9, 18, 0.7); }
 
-.detail-fav.on { color: var(--brass); border-color: var(--brass); }
+.card-fav:hover {
+  background: rgba(7, 9, 18, 0.85);
+  border-color: rgba(233, 226, 207, 0.6);
+}
 
-.fav-filter { display: inline-flex; align-items: center; gap: 6px; }
-.fav-filter.active { color: var(--brass); border-color: var(--brass); background: var(--brass-wash); }
+.card-fav.on {
+  color: var(--brass);
+  border-color: var(--brass);
+  background: rgba(7, 9, 18, 0.7);
+}
 
-.pc-chart { width: 100%; height: auto; display: block; margin-top: 10px; }
-.pc-grid { stroke: var(--line); stroke-width: 1; }
-.pc-lbl { fill: var(--ink-faint); font-family: var(--ff-mono); font-size: 11px; }
-.pc-area { fill: var(--good-wash); stroke: none; }
-.pc-line { fill: none; stroke: var(--verdigris); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
-.pc-dot { fill: var(--verdigris); }
-.pc-meta { font-size: .8rem; margin: 4px 0 0; }
+.detail-fav.on {
+  color: var(--brass);
+  border-color: var(--brass);
+}
+
+.fav-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fav-filter.active {
+  color: var(--brass);
+  border-color: var(--brass);
+  background: var(--brass-wash);
+}
+
+.pc-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+.pc-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.pc-lbl {
+  fill: var(--ink-faint);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+}
+
+.pc-area {
+  fill: var(--good-wash);
+  stroke: none;
+}
+
+.pc-line {
+  fill: none;
+  stroke: var(--verdigris);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.pc-dot {
+  fill: var(--verdigris);
+}
+
+.pc-meta {
+  font-size: .8rem;
+  margin: 4px 0 0;
+}
 
 /* dropdown options never wrap; menu widens to fit longest option on one line */
-.uisel-btn { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.uisel-menu { right: auto; width: max-content; min-width: 100%; max-width: min(360px, 88vw); }
-.uisel-opt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.uisel-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uisel-menu {
+  right: auto;
+  width: max-content;
+  min-width: 100%;
+  max-width: min(360px, 88vw);
+}
+
+.uisel-opt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
