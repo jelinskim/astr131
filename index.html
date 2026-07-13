@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constellation Trainer</title>
+  <meta name="description" content="A field atlas for learning constellations from Stellarium screenshots." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script>try{var t=localStorage.getItem("sc_theme_v1");if(t)document.documentElement.setAttribute("data-theme",JSON.parse(t));}catch(e){}</script>
+</head>
+
+<body>
+  <div class="graticule" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
+            opacity="0.9">
+            <path d="M6 27 L14 12 L23 19 L31 9 L35 21" />
+          </g>
+          <g fill="currentColor">
+            <circle cx="6" cy="27" r="1.9" />
+            <circle cx="14" cy="12" r="2.5" />
+            <circle cx="23" cy="19" r="1.6" />
+            <circle cx="31" cy="9" r="2.2" />
+            <circle cx="35" cy="21" r="1.5" />
+          </g>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Constellation</span>
+        <span class="brand-sub">Trainer</span>
+      </span>
+    </a>
+
+    <div class="topbar-right">
+      <nav class="nav" id="nav">
+        <a href="#/quiz" data-route="/quiz">Quiz</a>
+        <a href="#/browse" data-route="/browse">Atlas</a>
+        <a href="#/stats" data-route="/stats">Stats</a>
+      </nav>
+      <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Toggle theme"></button>
+    </div>
+  </header>
+
+  <div id="preview-banner" class="preview-banner" hidden>
+    Previewing unpublished <b>draft</b> changes.
+    <button type="button" id="exit-preview" class="link-btn">Use published data</button>
+  </div>
+
+  <main id="app" class="app"></main>
+
+  <footer class="footer">
+    <span>Screenshots taken in Stellarium</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
